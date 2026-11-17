@@ -11,7 +11,6 @@
   :root{
     --navy:#1E3A5F;
     --steel:#4F6F8F;
-    --steel-soft:#B9C8D6;
     --ink:#2F3640;
     --teal:#00787A;
     --mist:#EEF3F8;
@@ -20,12 +19,10 @@
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{height:100%;background:#CFD8E2;font-family:'Poppins','Helvetica Neue',Arial,sans-serif;color:var(--ink);overflow:hidden}
 
-  /* Escenario 16:9 escalado */
   .stage{position:fixed;left:50%;top:50%;width:1600px;height:900px;transform:translate(-50%,-50%) scale(var(--s,1));transform-origin:center}
   .slide{position:absolute;inset:0;background:var(--white);overflow:hidden;display:none}
   .slide.active{display:block}
 
-  /* Decoraciones de esquina, al estilo de la referencia */
   .corner{position:absolute;width:400px;height:400px;pointer-events:none}
   .corner svg{width:100%;height:100%;display:block;overflow:visible}
   .c-tl{top:-200px;left:-200px}
@@ -37,7 +34,6 @@
   .dots.l{left:40px;top:340px}
   .dots.r{right:40px;top:340px}
 
-  /* Portada y cierre */
   .cover{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 240px}
   .eyebrow{font-size:26px;letter-spacing:.24em;color:var(--steel);font-weight:600;text-transform:uppercase}
   .cover h1{font-size:92px;line-height:1.02;color:var(--navy);font-weight:800;margin:26px 0 24px;letter-spacing:-.015em;text-transform:uppercase}
@@ -47,20 +43,21 @@
   .cover .authors span{font-size:21px;color:var(--steel)}
   .cover .inst{margin-top:34px;font-size:24px;color:var(--steel);letter-spacing:.05em;font-weight:500}
 
-  /* Encabezado de contenido */
   .head{position:absolute;left:210px;top:120px;right:210px}
   .kicker{font-size:22px;font-weight:600;letter-spacing:.2em;color:var(--steel);text-transform:uppercase}
   .head h2{font-size:66px;font-weight:800;color:var(--navy);line-height:1.05;margin-top:10px;letter-spacing:-.015em;text-transform:uppercase}
   .body{position:absolute;left:210px;right:210px;top:300px;bottom:95px}
   .pg{position:absolute;right:210px;bottom:60px;font-size:22px;color:var(--steel);font-weight:600}
 
-  /* Listas */
   ul.clean{list-style:none}
-  ul.clean li{position:relative;padding-left:46px;font-size:31px;line-height:1.42;margin-bottom:18px}
+  ul.clean li{position:relative;padding-left:46px;font-size:29px;line-height:1.42;margin-bottom:16px}
   ul.clean li::before{content:"";position:absolute;left:4px;top:.6em;width:17px;height:17px;border-radius:50%;background:var(--teal)}
   ul.clean.sm li{font-size:26px;margin-bottom:12px}
+  ul.clean.xs{columns:2;column-gap:60px}
+  ul.clean.xs li{font-size:19px;margin-bottom:10px;line-height:1.32;padding-left:0;break-inside:avoid}
+  ul.clean.xs li::before{display:none}
+  ul.clean.xs li::before{width:10px;height:10px;top:.55em;left:2px}
 
-  /* Tarjetas */
   .grid2{display:grid;grid-template-columns:1fr 1fr;gap:36px}
   .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:34px}
   .card{background:var(--white);border-radius:22px;padding:30px 36px;box-shadow:0 14px 36px rgba(30,58,95,.14);border-top:8px solid var(--steel);display:flex;flex-direction:column;justify-content:center}
@@ -70,7 +67,7 @@
   .card h3{font-size:29px;font-weight:700;color:var(--navy);margin-bottom:10px;line-height:1.2}
   .card p{font-size:24px;line-height:1.45}
   .card ul{list-style:none}
-  .card ul li{font-size:25px;line-height:1.45;padding-left:32px;position:relative;margin-bottom:12px}
+  .card ul li{font-size:24px;line-height:1.42;padding-left:32px;position:relative;margin-bottom:9px}
   .card ul li::before{content:"";position:absolute;left:2px;top:.6em;width:12px;height:12px;border-radius:50%;background:var(--teal)}
   .tag{display:inline-block;font-size:19px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
 
@@ -87,7 +84,6 @@
   .callout{border-left:8px solid var(--teal);background:var(--mist);border-radius:16px;padding:26px 34px;font-size:27px;line-height:1.45;color:var(--navy)}
   .callout b{color:var(--teal)}
 
-  /* Tablas */
   table.t{width:100%;border-collapse:separate;border-spacing:0;font-size:24px;background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 12px 32px rgba(30,58,95,.12)}
   table.t th{background:var(--navy);color:#fff;font-weight:600;text-align:center;padding:18px 14px;font-size:22px}
   table.t th:first-child,table.t td:first-child{text-align:left;padding-left:26px}
@@ -95,7 +91,6 @@
   table.t tr:last-child td{border-bottom:none}
   table.t tr.hl td{background:#E2F1F1;color:var(--navy);font-weight:600}
 
-  /* Barras */
   .bars{display:flex;flex-direction:column;gap:24px}
   .bar{display:grid;grid-template-columns:230px 1fr 110px;align-items:center;gap:20px;font-size:24px}
   .bar .name{color:var(--navy);font-weight:600}
@@ -106,43 +101,34 @@
   .bar .ref{position:absolute;top:-8px;bottom:-8px;width:3px;background:var(--navy)}
 
   .fig{background:#fff;border-radius:22px;padding:26px 30px;box-shadow:0 14px 36px rgba(30,58,95,.14);text-align:center}
-  .fig img{max-width:100%;max-height:430px;display:block;margin:0 auto}
+  .fig img{max-width:100%;display:block;margin:0 auto}
   .fig p{font-size:22px;color:var(--steel);margin-top:14px;font-weight:500}
 
-  /* Flujo para metodología */
-  .flow{display:flex;flex-direction:column;gap:16px;height:100%}
-  .flow .step{flex:1;display:grid;grid-template-columns:330px 1fr;align-items:center;gap:36px;background:#fff;border-radius:20px;box-shadow:0 10px 28px rgba(30,58,95,.12);padding:0 40px;border-left:9px solid var(--steel)}
-  .flow .step.accent{border-left-color:var(--teal)}
-  .flow .step .n{font-size:21px;font-weight:700;color:var(--teal);letter-spacing:.12em}
-  .flow .step h3{font-size:30px;color:var(--navy);margin-top:6px;line-height:1.2;font-weight:700}
-  .flow .step p{font-size:24px;line-height:1.42}
+  .rows{display:flex;flex-direction:column;gap:12px;height:100%;justify-content:space-between}
+  .row{flex:1;display:grid;grid-template-columns:330px 1fr;align-items:center;gap:30px;background:#fff;border-radius:18px;box-shadow:0 8px 24px rgba(30,58,95,.11);padding:0 36px;border-left:9px solid var(--steel);max-height:88px}
+  .row.accent{border-left-color:var(--teal)}
+  .row .n{font-size:20px;font-weight:700;color:var(--teal);letter-spacing:.12em}
+  .row h3{font-size:26px;color:var(--navy);margin-top:2px;line-height:1.2;font-weight:700}
+  .row p{font-size:22px;line-height:1.38}
 
-  .quote{font-size:52px;font-weight:600;color:var(--navy);line-height:1.25;font-style:italic}
-  .quote span{color:var(--teal)}
+  .question{font-size:38px;font-weight:600;line-height:1.4}
+  .prob li{font-size:21px;margin-bottom:8px;line-height:1.3}
+  .marco .card{padding:20px 30px}
+  .marco .card ul li{font-size:21px;margin-bottom:4px;line-height:1.3}
+  .marco .card .tag{margin-bottom:6px}
+  .marco .banner{padding:20px 30px}
+  .marco .banner p{font-size:36px}
 </style>
 </head>
 <body>
 
-<!-- Símbolos decorativos -->
 <svg width="0" height="0" style="position:absolute">
   <defs>
-    <!-- Cuarto de disco sólido con anillos concéntricos; origen en la esquina -->
     <symbol id="corner-a" viewBox="-200 -200 400 400">
       <path d="M0 0 H175 A175 175 0 0 1 0 175 Z" fill="#4F6F8F"/>
       <circle cx="0" cy="0" r="232" fill="none" stroke="#4F6F8F" stroke-width="4"/>
       <circle cx="0" cy="0" r="282" fill="none" stroke="#4F6F8F" stroke-width="2.5"/>
       <circle cx="262" cy="110" r="20" fill="#4F6F8F"/>
-    </symbol>
-    <!-- Semidisco con trama diagonal -->
-    <pattern id="hatch" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-      <line x1="0" y1="0" x2="0" y2="16" stroke="#4F6F8F" stroke-width="3.5"/>
-    </pattern>
-    <symbol id="corner-b" viewBox="-200 -200 400 400">
-      <path d="M0 -20 A185 185 0 0 1 0 150 Z" fill="#4F6F8F"/>
-      <circle cx="0" cy="0" r="236" fill="none" stroke="#4F6F8F" stroke-width="4"/>
-      <rect x="-200" y="-200" width="200" height="200" fill="url(#hatch)" opacity="0"/>
-      <rect x="40" y="40" width="130" height="130" fill="url(#hatch)" transform="translate(-200 -200)" opacity="0"/>
-      <path d="M60 60 H200 V200 H60 Z" fill="url(#hatch)" opacity=".9" transform="rotate(0)"/>
     </symbol>
   </defs>
 </svg>
@@ -188,17 +174,19 @@
   <section class="slide">
     <div class="corner c-tl"><svg><use href="#corner-a"/></svg></div>
     <div class="corner c-br"><svg><use href="#corner-a"/></svg></div>
-    <div class="head"><div class="kicker">Problema</div><h2>¿Cuánto aporta la complejidad?</h2></div>
+    <div class="head"><div class="kicker">Planteamiento del problema</div><h2>¿Qué se necesita tarificar?</h2></div>
     <div class="body">
-      <div class="grid2" style="grid-template-columns:1.2fr 1fr;gap:70px">
-        <ul class="clean">
-          <li>Cartera real en Francia: <b>678,007 pólizas</b>, de las cuales <b>96.32 %</b> no tuvo siniestros.</li>
-          <li>Prima pura = frecuencia × severidad.</li>
-          <li><i>Boosting</i> y redes capturan no linealidades que el GLM omite.</li>
-          <li>¿Esa complejidad mejora la predicción de forma real?</li>
+      <div class="grid2" style="grid-template-columns:1.25fr 1fr;gap:70px;align-items:start;margin-top:-30px">
+        <ul class="clean prob">
+          <li>La tarificación es el núcleo del negocio: cada póliza necesita una prima que refleje su riesgo esperado.</li>
+          <li>Una prima imprecisa cuesta: sobreprecia y se pierden clientes; subprecia y se pierde margen.</li>
+          <li>Los GLM son el estándar por su estabilidad y sus coeficientes interpretables.</li>
+          <li>Boosting y redes capturan no linealidades, pero no se sabe cuánta mejora aportan ni a costa de qué transparencia.</li>
         </ul>
-        <div class="card navy" style="align-self:center"><span class="tag">Pregunta guía</span>
-          <p style="font-size:32px;font-weight:600;line-height:1.35">¿En qué componente del riesgo los modelos flexibles superan al GLM de forma significativa y útil para la tarifa?</p></div>
+        <div style="display:flex;flex-direction:column">
+        <div class="card navy"><span class="tag" style="color:#9FE3E3">Pregunta de investigación</span>
+          <p style="font-size:21px;font-weight:600;line-height:1.36">¿Cómo se comparan, sobre una misma cartera real y con un protocolo común, los GLM tradicionales (Poisson y Gamma) frente a XGBoost, LightGBM y redes neuronales en la estimación de la frecuencia, la severidad y la prima pura, evaluando tanto la capacidad predictiva como la interpretabilidad actuarial?</p></div>
+        <div class="callout" style="margin-top:18px;font-size:20px;padding:18px 26px"><b>Brecha:</b> buena parte de la literatura evalúa estos enfoques de forma aislada o sin contrastarlos con el GLM sobre la misma cartera.</div>
       </div>
     </div>
     <div class="pg">3</div>
@@ -209,12 +197,15 @@
     <div class="corner c-tl"><svg><use href="#corner-a"/></svg></div>
     <div class="corner c-br"><svg><use href="#corner-a"/></svg></div>
     <div class="head"><div class="kicker">Justificación</div><h2>Por qué este estudio</h2></div>
-    <div class="body">
-      <div class="grid2" style="grid-template-rows:1fr 1fr;display:grid;height:100%;gap:30px">
-        <div class="card"><span class="tag">Comparación</span><h3>Pocos estudios en la misma cartera</h3><p>Rara vez se comparan GLM, boosting y redes sobre la misma base y bajo el mismo protocolo.</p></div>
-        <div class="card"><span class="tag">Interpretabilidad</span><h3>Precisión y transparencia</h3><p>La interpretabilidad se analiza poco junto con la precisión, aunque es requisito en la práctica regulada.</p></div>
-        <div class="card"><span class="tag">Balanceo</span><h3>Calibración olvidada</h3><p>El balanceo de clases se usa en conteos sin revisar la calibración.</p></div>
-        <div class="card accent"><span class="tag">Criterio</span><h3>La calibración importa</h3><p>Al fijar un precio, la calibración es lo que más importa.</p></div>
+    <div class="body" style="top:285px">
+      <div class="banner" style="margin-bottom:24px;padding:20px 40px">
+        <span class="tag" style="margin-bottom:6px">Qué compara el estudio</span>
+        <p style="font-size:24px;line-height:1.35">La clasificación de la severidad en bandas frente a la predicción directa del monto, junto con los GLM, el boosting y las redes.</p>
+      </div>
+      <div class="grid3" style="align-items:start">
+        <div class="card" style="justify-content:flex-start;padding:24px 30px"><span class="tag">Severidad</span><h3 style="font-size:25px">Regresión directa con señal débil</h3><p style="font-size:21px;line-height:1.38">La predicción directa del monto tiene poco poder predictivo, así que el problema se reformula como clasificación ordinal en bandas.</p></div>
+        <div class="card accent" style="justify-content:flex-start;padding:24px 30px"><span class="tag">Comparación</span><h3 style="font-size:25px">Pocos estudios en la misma cartera</h3><p style="font-size:21px;line-height:1.38">Rara vez se comparan GLM, boosting, redes y clasificación sobre la misma base y bajo el mismo protocolo.</p></div>
+        <div class="card" style="justify-content:flex-start;padding:24px 30px"><span class="tag">Comparación de severidad</span><h3 style="font-size:25px">Clasificar o predecir el monto</h3><p style="font-size:21px;line-height:1.38">Se compara la clasificación de la severidad en bandas con la predicción directa del monto, que es lo que alimenta la prima pura.</p></div>
       </div>
     </div>
     <div class="pg">4</div>
@@ -226,16 +217,29 @@
     <div class="corner c-br"><svg><use href="#corner-a"/></svg></div>
     <div class="head"><div class="kicker">Marco teórico</div><h2>Componentes del modelo</h2></div>
     <div class="body">
-      <div class="grid2" style="grid-template-columns:1fr 1fr;gap:36px">
-        <div class="card"><ul>
-          <li><b>Frecuencia:</b> Poisson con exposición como <i>offset</i>.</li>
-          <li><b>Severidad:</b> Gamma con enlace logarítmico.</li>
-          <li><b>Boosting:</b> XGBoost y LightGBM.</li>
-          <li><b>Redes:</b> FFNN y CANN.</li></ul></div>
+      <div class="grid2 marco" style="grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:20px;height:100%">
+        <div class="card"><span class="tag">Frecuencia y severidad</span>
+          <ul>
+            <li><b>Frecuencia:</b> Poisson con exposición como <i>offset</i>.</li>
+            <li><b>Severidad:</b> Gamma con enlace logarítmico.</li>
+            <li><b>Boosting:</b> XGBoost y LightGBM. <b>Redes:</b> FFNN y CANN.</li>
+          </ul></div>
+        <div class="card accent"><span class="tag">Bandas de severidad</span>
+          <ul>
+            <li>Barato si S̄ &lt; c₁; intermedio si c₁ ≤ S̄ &lt; c₂; caro si S̄ ≥ c₂.</li>
+            <li>Se reformula la severidad como clasificación ordinal en bandas.</li>
+          </ul></div>
+        <div class="card"><span class="tag">Métodos de corte</span>
+          <ul>
+            <li>Jenks: minimiza la varianza intraclase.</li>
+            <li>k-means unidimensional con k = 3.</li>
+            <li>Regla de la cola (Wang), con cola inferior propia.</li>
+            <li>Ancho igual en escala log y cortes fijos (1,000 y 3,000).</li>
+          </ul></div>
         <div class="banner" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center">
           <span class="tag" style="color:#9FE3E3">Prima pura</span>
           <p style="font-size:44px;font-weight:600">P̂(x) = λ̂(x) · ŝ(x)</p>
-          <p style="font-size:24px;margin-top:18px;opacity:.9">frecuencia × severidad</p></div>
+          <p style="font-size:24px;margin-top:16px;opacity:.9">frecuencia × severidad</p></div>
       </div>
     </div>
     <div class="pg">5</div>
@@ -246,13 +250,13 @@
     <div class="corner c-tl"><svg><use href="#corner-a"/></svg></div>
     <div class="corner c-br"><svg><use href="#corner-a"/></svg></div>
     <div class="head"><div class="kicker">Objetivos</div><h2>Objetivos del estudio</h2></div>
-    <div class="body">
-      <div class="banner" style="margin-bottom:34px"><span class="tag">Objetivo general</span>
-        <p>Comparar, sobre una misma cartera real y con un protocolo común, los GLM (Poisson y Gamma) frente a XGBoost, LightGBM y redes neuronales, en capacidad predictiva e interpretabilidad actuarial.</p></div>
+    <div class="body" style="top:250px">
+      <div class="banner" style="margin-bottom:26px;padding:26px 44px"><span class="tag">Objetivo general</span>
+        <p style="font-size:25px">Comparar, sobre una misma cartera real y con un protocolo común, los GLM tradicionales (Poisson y Gamma) frente a XGBoost, LightGBM y redes neuronales, en la estimación de la frecuencia, la severidad y la prima pura, evaluando la capacidad predictiva y la interpretabilidad actuarial.</p></div>
       <div class="grid3">
-        <div class="card"><span class="tag">O1</span><h3>Caracterizar</h3><p>La población según frecuencia, severidad y prima pura, 2000–2013 en Francia.</p></div>
-        <div class="card"><span class="tag">O2</span><h3>Predecir</h3><p>Frecuencia, severidad y prima pura con GLM, machine learning y redes.</p></div>
-        <div class="card"><span class="tag">O3</span><h3>Comparar</h3><p>Desempeño con métricas cuantitativas e interpretabilidad de forma cualitativa.</p></div>
+        <div class="card"><span class="tag">O1</span><h3>Caracterizar</h3><p>La población de estudio según frecuencia, severidad y prima pura, en el periodo 2000–2013 en Francia.</p></div>
+        <div class="card"><span class="tag">O2</span><h3>Predecir</h3><p>Frecuencia, severidad y prima pura con GLM, algoritmos de machine learning y redes neuronales.</p></div>
+        <div class="card"><span class="tag">O3</span><h3>Comparar</h3><p>El desempeño de ambos tipos de modelado con métricas cuantitativas y un análisis cualitativo de su interpretabilidad.</p></div>
       </div>
     </div>
     <div class="pg">6</div>
@@ -262,13 +266,10 @@
   <section class="slide">
     <div class="corner c-tl"><svg><use href="#corner-a"/></svg></div>
     <div class="corner c-br"><svg><use href="#corner-a"/></svg></div>
-    <div class="head"><div class="kicker">Pregunta guía</div><h2>¿Cuánto aporta la complejidad?</h2></div>
-    <div class="body">
-      <div class="banner" style="margin-bottom:40px"><p style="font-size:36px;font-weight:600">¿En qué componente del riesgo los modelos flexibles superan al GLM de forma significativa y útil para la tarifa?</p></div>
-      <div class="grid2" style="gap:36px">
-        <div class="card" style="text-align:center"><h3 style="font-size:44px">Frecuencia</h3><p>¿Mejoran los modelos flexibles el conteo de siniestros?</p></div>
-        <div class="card accent" style="text-align:center"><h3 style="font-size:44px">Severidad</h3><p>¿Mejoran los modelos flexibles el monto por siniestro?</p></div>
-      </div>
+    <div class="head"><div class="kicker">Pregunta guía</div><h2>Pregunta guía</h2></div>
+    <div class="body" style="display:flex;align-items:center">
+      <div class="banner" style="width:100%;padding:60px 70px"><span class="tag">Pregunta del estudio</span>
+        <p class="question" style="color:#fff">¿Cómo se comparan, sobre una misma cartera real y con un protocolo común, los GLM tradicionales (Poisson y Gamma) frente a XGBoost, LightGBM y redes neuronales en la estimación de la frecuencia, la severidad y la prima pura, evaluando tanto la capacidad predictiva como la interpretabilidad actuarial?</p></div>
     </div>
     <div class="pg">7</div>
   </section>
@@ -279,12 +280,13 @@
     <div class="corner c-br"><svg><use href="#corner-a"/></svg></div>
     <div class="head"><div class="kicker">Metodología</div><h2>Protocolo de modelación</h2></div>
     <div class="body">
-      <div class="flow">
-        <div class="step"><div><div class="n">PARTICIÓN</div><h3>80/20 por póliza</h3></div><p>Semilla fija 42, estratificada por ClaimNb &gt; 0: 542,405 de entrenamiento y 135,602 de prueba.</p></div>
-        <div class="step accent"><div><div class="n">BÚSQUEDA</div><h3>Aleatoria con validación cruzada</h3></div><p>15 configuraciones en regresión (CV de 5 pliegues) y 3 en clasificación.</p></div>
-        <div class="step"><div><div class="n">FRECUENCIA Y SEVERIDAD</div><h3>Poisson, Gamma y tres bandas</h3></div><p>La severidad se reformula como clasificación ordinal en tres bandas.</p></div>
-        <div class="step accent"><div><div class="n">REDES</div><h3>6 pliegues, protocolo reducido</h3></div><p>Versión reducida del protocolo de Holvoet et al.: 4 configuraciones y 50 épocas.</p></div>
-        <div class="step"><div><div class="n">PRUEBAS</div><h3>Diebold-Mariano, DeLong y bootstrap</h3></div><p>Diferencias de desviación, AUC y Gini con intervalos de confianza del 95 %.</p></div>
+      <div class="rows">
+        <div class="row"><div><div class="n">PARTICIÓN</div><h3>80/20 por póliza</h3></div><p>Semilla fija 42, estratificada por ClaimNb &gt; 0: 542,405 de entrenamiento y 135,602 de prueba.</p></div>
+        <div class="row accent"><div><div class="n">BÚSQUEDA</div><h3>Aleatoria con validación cruzada</h3></div><p>15 configuraciones en regresión (CV de 5 pliegues) y 3 en clasificación (mayor F1 macro).</p></div>
+        <div class="row"><div><div class="n">CORTES DE BANDAS</div><h3>Solo con entrenamiento</h3></div><p>Se estiman dentro de cada pliegue. Cada banda debe tener al menos 30 casos en prueba.</p></div>
+        <div class="row accent"><div><div class="n">BALANCEO</div><h3>Solo en frecuencia</h3></div><p>Ponderación, SMOTE y ADASYN dentro del ajuste. La severidad no se balancea; las bandas usan pesos balanceados.</p></div>
+        <div class="row"><div><div class="n">REDES</div><h3>6 pliegues, protocolo reducido</h3></div><p>Versión reducida del protocolo de Holvoet et al.: 4 configuraciones y 50 épocas.</p></div>
+        <div class="row accent"><div><div class="n">PRUEBAS</div><h3>Diebold-Mariano, DeLong y bootstrap</h3></div><p>Diferencias de desviación, AUC y Gini con IC del 95 % (500 remuestreos en frecuencia, 1,000 en severidad).</p></div>
       </div>
     </div>
     <div class="pg">8</div>
@@ -294,7 +296,7 @@
   <section class="slide">
     <div class="corner c-tl"><svg><use href="#corner-a"/></svg></div>
     <div class="corner c-br"><svg><use href="#corner-a"/></svg></div>
-    <div class="head"><div class="kicker">Datos</div><h2>La señal está en la frecuencia</h2></div>
+    <div class="head"><div class="kicker">Datos</div><h2>Una cartera real y muy concentrada en ceros</h2></div>
     <div class="body">
       <div class="stats">
         <div class="stat"><div class="num">678,007</div><div class="lbl">pólizas de responsabilidad civil en Francia</div></div>
@@ -303,14 +305,32 @@
         <div class="stat t"><div class="num">2,397</div><div class="lbl">monto medio, frente a una mediana de 1,172</div></div>
       </div>
       <ul class="clean" style="margin-top:50px">
-        <li>Casi todo son ceros y la severidad es muy asimétrica: su cola supera los 4 millones.</li>
-        <li>Las correlaciones numéricas con la frecuencia son bajas (menores que 0.06).</li>
+        <li>Las dos tablas (frecuencia y severidad) se integran por IDpol sin inconsistencias.</li>
+        <li>La severidad es muy asimétrica: su máximo supera los 4 millones.</li>
       </ul>
     </div>
     <div class="pg">9</div>
   </section>
 
-  <!-- 10. RESULTADOS FRECUENCIA -->
+  <!-- 10. ANÁLISIS EXPLORATORIO -->
+  <section class="slide">
+    <div class="corner c-tl"><svg><use href="#corner-a"/></svg></div>
+    <div class="corner c-br"><svg><use href="#corner-a"/></svg></div>
+    <div class="head"><div class="kicker">Análisis exploratorio</div><h2>Señal débil y desbalance fuerte</h2></div>
+    <div class="body">
+      <div class="grid2" style="grid-template-columns:1.25fr 1fr;gap:44px;align-items:center">
+        <div class="fig" style="padding:14px 18px"><img src="figs/correlacion.png" alt="Matriz de correlación" style="max-height:400px"><p>Correlación entre variables numéricas de freMTPL2freq.</p></div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <div class="card" style="padding:18px 26px"><span class="tag" style="margin-bottom:6px">Relación entre variables</span><p style="font-size:21px">Correlaciones bajas. La única fuerte es DrivAge–BonusMalus (−0.48); con ClaimNb, ninguna supera 0.09.</p></div>
+          <div class="card accent" style="padding:18px 26px"><span class="tag" style="margin-bottom:6px">Desbalance de clases</span><p style="font-size:21px">Más del 96 % de las pólizas no tiene siniestros: la clase con siniestro es minoritaria.</p></div>
+          <div class="card" style="padding:18px 26px"><span class="tag" style="margin-bottom:6px">Severidad</span><p style="font-size:21px">Sesgo a la derecha: la media (2,397) supera a la mediana (1,172).</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="pg">10</div>
+  </section>
+
+  <!-- 11. RESULTADOS FRECUENCIA -->
   <section class="slide">
     <div class="corner c-tl"><svg><use href="#corner-a"/></svg></div>
     <div class="corner c-br"><svg><use href="#corner-a"/></svg></div>
@@ -339,10 +359,10 @@
         <li>Mejora de 2.5 % en desviación frente al GLM. XGBoost y LightGBM son indistinguibles.</li>
       </ul>
     </div>
-    <div class="pg">10</div>
+    <div class="pg">11</div>
   </section>
 
-  <!-- 11. BALANCEO -->
+  <!-- 12. BALANCEO -->
   <section class="slide">
     <div class="corner c-tl"><svg><use href="#corner-a"/></svg></div>
     <div class="corner c-br"><svg><use href="#corner-a"/></svg></div>
@@ -366,36 +386,36 @@
         </ul>
       </div>
     </div>
-    <div class="pg">11</div>
+    <div class="pg">12</div>
   </section>
 
-  <!-- 12. CALIBRACIÓN -->
+  <!-- 13. CALIBRACIÓN -->
   <section class="slide">
     <div class="corner c-tl"><svg><use href="#corner-a"/></svg></div>
     <div class="corner c-br"><svg><use href="#corner-a"/></svg></div>
     <div class="head"><div class="kicker">Resultados · Calibración</div><h2>Calibración del mejor modelo</h2></div>
     <div class="body">
-      <div class="fig"><img src="figs/calibracion_frecuencia.png" alt="Calibración LightGBM sin balanceo"><p>Frecuencia anual observada frente a la predicha por grupo de riesgo: entrenamiento, validación y prueba.</p></div>
+      <div class="fig"><img src="figs/calibracion_frecuencia.png" alt="Calibración LightGBM sin balanceo" style="max-height:380px"><p>Frecuencia anual observada frente a la predicha por grupo de riesgo: entrenamiento, validación y prueba.</p></div>
     </div>
-    <div class="pg">12</div>
+    <div class="pg">13</div>
   </section>
 
-  <!-- 13. BOOTSTRAP -->
+  <!-- 14. BOOTSTRAP -->
   <section class="slide">
     <div class="corner c-tl"><svg><use href="#corner-a"/></svg></div>
     <div class="corner c-br"><svg><use href="#corner-a"/></svg></div>
     <div class="head"><div class="kicker">Resultados · Pruebas</div><h2>Diferencias con intervalos de confianza</h2></div>
     <div class="body">
-      <div class="fig" style="padding:18px 24px"><img src="figs/bootstrap_frecuencia.png" alt="Bootstrap de métricas en prueba" style="max-height:290px;max-width:1300px"><p>Desviación y Gini en prueba con IC del 95 % (bootstrap).</p></div>
+      <div class="fig" style="padding:18px 24px"><img src="figs/bootstrap_frecuencia.png" alt="Bootstrap de métricas en prueba" style="max-height:290px"><p>Desviación y Gini en prueba con IC del 95 % (bootstrap).</p></div>
       <div class="grid2" style="gap:30px;margin-top:26px">
         <div class="callout">XGBoost es <b>indistinguible</b> de LightGBM (p = 0.127).</div>
         <div class="callout">Frente al GLM, la desviación de LightGBM es mayor en <b>0.0060</b> [0.0051, 0.0067].</div>
       </div>
     </div>
-    <div class="pg">13</div>
+    <div class="pg">14</div>
   </section>
 
-  <!-- 14. SEVERIDAD -->
+  <!-- 15. SEVERIDAD -->
   <section class="slide">
     <div class="corner c-tl"><svg><use href="#corner-a"/></svg></div>
     <div class="corner c-br"><svg><use href="#corner-a"/></svg></div>
@@ -420,10 +440,10 @@
         </ul>
       </div>
     </div>
-    <div class="pg">14</div>
+    <div class="pg">15</div>
   </section>
 
-  <!-- 15. PRIMA PURA -->
+  <!-- 16. PRIMA PURA -->
   <section class="slide">
     <div class="corner c-tl"><svg><use href="#corner-a"/></svg></div>
     <div class="corner c-br"><svg><use href="#corner-a"/></svg></div>
@@ -438,10 +458,10 @@
       </div>
       <div class="callout" style="margin-top:40px">La subestimación proviene de la severidad. Falta comparar contra la prima pura del GLM.</div>
     </div>
-    <div class="pg">15</div>
+    <div class="pg">16</div>
   </section>
 
-  <!-- 16. DISCUSIÓN -->
+  <!-- 17. DISCUSIÓN -->
   <section class="slide">
     <div class="corner c-tl"><svg><use href="#corner-a"/></svg></div>
     <div class="corner c-br"><svg><use href="#corner-a"/></svg></div>
@@ -454,10 +474,10 @@
       </div>
       <div class="callout" style="margin-top:28px">Sin SHAP ni diagnóstico de residuos, la interpretación de los modelos flexibles queda incompleta.</div>
     </div>
-    <div class="pg">16</div>
+    <div class="pg">17</div>
   </section>
 
-  <!-- 17. CONCLUSIONES Y TRABAJO FUTURO -->
+  <!-- 18. CONCLUSIONES Y TRABAJO FUTURO -->
   <section class="slide">
     <div class="corner c-tl"><svg><use href="#corner-a"/></svg></div>
     <div class="corner c-br"><svg><use href="#corner-a"/></svg></div>
@@ -477,26 +497,54 @@
       </div>
       <div class="banner" style="margin-top:36px"><p>La complejidad aporta valor donde existe señal: en la frecuencia.</p></div>
     </div>
-    <div class="pg">17</div>
-  </section>
-
-  <!-- 18. BIBLIOGRAFÍA -->
-  <section class="slide">
-    <div class="corner c-tl"><svg><use href="#corner-a"/></svg></div>
-    <div class="corner c-br"><svg><use href="#corner-a"/></svg></div>
-    <div class="head"><div class="kicker">Bibliografía</div><h2>Referencias</h2></div>
-    <div class="body">
-      <ul class="clean sm" style="font-size:24px">
-        <li>Bailey y Simon (1960). <i>Two studies in automobile insurance ratemaking</i>. ASTIN Bulletin.</li>
-        <li>Dugas et al. (2003). <i>Statistical learning algorithms applied to automobile insurance ratemaking</i>. CAS Forum.</li>
-        <li>Chevalier y Côté (2025). <i>From point to probabilistic gradient boosting for claim frequency and severity prediction</i>. arXiv:2412.14916.</li>
-        <li>Holvoet, Antonio y Henckaerts (2023). <i>Neural networks for insurance pricing with frequency and severity data</i>. arXiv:2310.12671.</li>
-      </ul>
-    </div>
     <div class="pg">18</div>
   </section>
 
-  <!-- 19. GRACIAS -->
+  <!-- 19. REFERENCIAS -->
+  <section class="slide">
+    <div class="corner c-tl"><svg><use href="#corner-a"/></svg></div>
+    <div class="corner c-br"><svg><use href="#corner-a"/></svg></div>
+    <div class="head"><div class="kicker">Bibliografía</div><h2>Referencias (1/2)</h2></div>
+    <div class="body" style="top:285px">
+      <ul class="clean xs">
+          <li>[1] R. A. Bailey and L. J. Simon, “Two studies in automobile insurance ratemaking,” <i>ASTIN Bulletin</i>, vol. 1, no. 4, pp. 192–217, 1960.</li>
+          <li>[2] C. Dugas, Y. Bengio, N. Chapados, P. Vincent, G. Denoncourt, and C. Fournier, “Statistical learning algorithms applied to automobile insurance ratemaking,” <i>CAS Forum</i>, pp. 179–213, Winter 2003.</li>
+          <li>[3] D. Chevalier and M.-P. Côté, “From point to probabilistic gradient boosting for claim frequency and severity prediction,” <i>European Actuarial J.</i>, vol. 15, 2025, arXiv:2412.14916.</li>
+          <li>[4] G. Dionne and C. Vanasse, “A generalization of automobile insurance rating models: The negative binomial distribution with a regression component,” <i>ASTIN Bulletin</i>, vol. 19, no. 2, pp. 199–212, 1989.</li>
+          <li>[5] R. A. Derrig and L. Francis, “Distinguishing the forest from the TREES: A comparison of tree-based data mining methods,” <i>Variance</i>, vol. 2, no. 2, pp. 184–208, 2008.</li>
+          <li>[6] X. Su and M. Bai, “Stochastic gradient boosting frequency-severity model of insurance claims,” <i>PLOS ONE</i>, vol. 15, no. 8, Art. no. e0238000, Aug. 2020.</li>
+          <li>[7] M. Krúpová, N. Rachdi, and Q. Guibert, “Explainable boosting machine for predicting claim severity and frequency in car insurance,” <i>European Actuarial Journal</i>, vol. 16, pp. 541–591, 2026. doi: 10.1007/s13385-026-00461-y.</li>
+          <li>[8] S. Kozarević and S. Filipović, “Risk assessment in motor insurance using generalised linear models in small markets: The case of Bosnia and Herzegovina,” <i>Sosyoekonomi</i>, vol. 34, no. 69, pp. 433–452, 2026. doi: 10.17233/sosyoekonomi.2026.03.20.</li>
+          <li>[9] M. Śmietanka, D. Liew, S. Hand, H. H. Loh, and Y.-Y. M. Chen, “Privacy preserving neural network predictive modelling in insurance using horizontal federated learning,” <i>British Actuarial Journal</i>, vol. 31, Art. no. e8, 2026. doi: 10.1017/S1357321725100329.</li>
+          <li>[10] F. Holvoet, K. Antonio, and R. Henckaerts, “Neural networks for insurance pricing with frequency and severity data: A benchmark study from data preprocessing to technical tariff,” arXiv:2310.12671, 2023.</li>
+      </ul>
+    </div>
+    <div class="pg">19</div>
+  </section>
+
+  <!-- 20. REFERENCIAS -->
+  <section class="slide">
+    <div class="corner c-tl"><svg><use href="#corner-a"/></svg></div>
+    <div class="corner c-br"><svg><use href="#corner-a"/></svg></div>
+    <div class="head"><div class="kicker">Bibliografía</div><h2>Referencias (2/2)</h2></div>
+    <div class="body" style="top:285px">
+      <ul class="clean xs">
+          <li>[11] N. V. Chawla, K. W. Bowyer, L. O. Hall, and W. P. Kegelmeyer, “SMOTE: Synthetic minority over-sampling technique,” <i>J. Artif. Intell. Res.</i>, vol. 16, pp. 321–357, 2002.</li>
+          <li>[12] H. He, Y. Bai, E. A. Garcia, and S. Li, “ADASYN: Adaptive synthetic sampling approach for imbalanced learning,” in <i>Proc. IEEE Int. Joint Conf. Neural Networks</i>, 2008, pp. 1322–1328.</li>
+          <li>[13] T. Chen and C. Guestrin, “XGBoost: A scalable tree boosting system,” in <i>Proc. 22nd ACM SIGKDD Int. Conf. Knowledge Discovery and Data Mining</i>, 2016, pp. 785–794.</li>
+          <li>[14] G. Ke et al., “LightGBM: A highly efficient gradient boosting decision tree,” in <i>Advances in Neural Information Processing Systems 30</i>, 2017, pp. 3146–3154.</li>
+          <li>[15] F. X. Diebold and R. S. Mariano, “Comparing predictive accuracy,” <i>J. Bus. Econ. Stat.</i>, vol. 13, no. 3, pp. 253–263, 1995.</li>
+          <li>[16] E. R. DeLong, D. M. DeLong, and D. L. Clarke-Pearson, “Comparing the areas under two or more correlated receiver operating characteristic curves: A nonparametric approach,” <i>Biometrics</i>, vol. 44, no. 3, pp. 837–845, 1988.</li>
+          <li>[17] S. Holm, “A simple sequentially rejective multiple test procedure,” <i>Scand. J. Statist.</i>, vol. 6, no. 2, pp. 65–70, 1979.</li>
+          <li>[18] G. F. Jenks, “The data model concept in statistical mapping,” <i>International Yearbook of Cartography</i>, vol. 7, pp. 186–190, 1967.</li>
+          <li>[19] J. MacQueen, “Some methods for classification and analysis of multivariate observations,” in <i>Proc. Fifth Berkeley Symposium on Mathematical Statistics and Probability</i>, vol. 1, 1967, pp. 281–297.</li>
+          <li>[20] B. Jiang, “Head/tail breaks: A new classification scheme for data with a heavy-tailed distribution,” <i>The Professional Geographer</i>, vol. 65, no. 3, pp. 482–494, 2013. doi: 10.1080/00330124.2012.700499.</li>
+      </ul>
+    </div>
+    <div class="pg">20</div>
+  </section>
+
+  <!-- 21. GRACIAS -->
   <section class="slide">
     <div class="corner c-tl"><svg><use href="#corner-a"/></svg></div>
     <div class="corner c-tr"><svg><use href="#corner-a"/></svg></div>
@@ -506,7 +554,7 @@
     <div class="cover">
       <h1 style="font-size:120px;margin-top:0">Gracias</h1>
       <div class="sub" style="font-size:30px">Agradecemos a la Universidad del Norte.</div>
-      <div class="quote" style="margin-top:70px">La complejidad aporta valor <span>donde existe señal.</span></div>
+      <div style="margin-top:70px;font-size:44px;font-style:italic;font-weight:600;color:var(--navy);line-height:1.25">La complejidad aporta valor <span style="color:var(--teal)">donde existe señal.</span></div>
     </div>
   </section>
 
